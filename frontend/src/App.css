@@ -1,0 +1,124 @@
+/* --- 1. SIFIRLAMA VE TEMEL --- */
+:root {
+  --primary: #4f46e5;       
+  --primary-hover: #4338ca;
+  --bg-body: #f8fafc;       
+  --bg-card: #ffffff;      
+  --text-main: #1e293b;    
+  --text-muted: #64748b;    
+  --border: #e2e8f0;
+}
+
+body, html, #root {
+  width: 100%; margin: 0; padding: 0;
+  background-color: var(--bg-body) !important;
+  color: var(--text-main) !important;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  box-sizing: border-box;
+}
+
+/* --- 2. HEADER --- */
+.app-header {
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 0;
+  position: sticky; top: 0; z-index: 50;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.header-content {
+  width: 100%; max-width: 1000px; margin: 0 auto; padding: 0 20px;
+  display: flex; justify-content: space-between; align-items: center; box-sizing: border-box;
+}
+.brand h1 { margin: 0; font-size: 1.5rem; color: #0f172a; font-weight: 800; }
+.brand span { color: var(--primary); }
+.user-info { display: flex; align-items: center; gap: 12px; }
+.badge { background: #eff6ff; color: #1d4ed8; padding: 6px 14px; border-radius: 99px; font-weight: 600; font-size: 0.85rem; border: 1px solid #dbeafe; }
+
+/* --- 3. DÜZEN --- */
+.main-container {
+  width: 100%; max-width: 1000px; margin: 30px auto; padding: 0 20px;
+  display: grid; grid-template-columns: 340px 1fr; gap: 40px; align-items: start; box-sizing: border-box;
+}
+
+/* --- 4. KART VE FORM --- */
+.card, .post-card, .auth-box {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.06); overflow: hidden;
+}
+
+/* SOL TARAFTAKİ FORM */
+.sidebar .card { padding: 25px; position: sticky; top: 100px; }
+.sidebar h3 { margin-top: 0; margin-bottom: 20px; font-size: 1.1rem; color: #334155; border-bottom: 1px solid #f1f5f9; padding-bottom: 10px; }
+.form-group { margin-bottom: 18px; }
+.label-title { display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 6px; color: #475569; }
+
+input, textarea, select {
+  width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px;
+  background: #fff !important; color: #0f172a !important; font-size: 0.95rem; font-family: inherit; box-sizing: border-box; transition: 0.2s;
+}
+input:focus, textarea:focus, select:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1); }
+.add-cat-btn { color: var(--primary); cursor: pointer; font-weight: 600; font-size: 0.85rem; }
+.category-add-area { background: #f8fafc; padding: 10px; border: 1px dashed #cbd5e1; border-radius: 8px; margin-top: 8px; }
+
+/* --- 5. BLOG POST KARTI (ÖNEMLİ KISIM) --- */
+.post-card { 
+  margin-bottom: 25px; 
+  padding: 0; /* İçeride padding vereceğiz */
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.post-card:hover { transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
+
+/* YAZAR VE TARİH BİLGİSİ */
+.post-meta {
+  padding: 15px 25px;
+  background-color: #f8fafc; /* Hafif gri üst bar */
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: 8px;
+  font-size: 0.85rem; color: #64748b; font-weight: 500;
+}
+.post-meta .author { color: #334155; font-weight: 600; }
+
+.post-header { padding: 20px 25px 10px 25px; display: flex; justify-content: space-between; align-items: flex-start; }
+.post-title { margin: 0; font-size: 1.5rem; color: #1e293b; font-weight: 800; letter-spacing: -0.025em; line-height: 1.3; }
+.cat-badge { background: #dbeafe; color: #1e40af; font-size: 0.75rem; padding: 4px 10px; border-radius: 6px; font-weight: 700; text-transform: uppercase; white-space: nowrap; margin-left: 15px; }
+
+.post-content { 
+  padding: 0 25px 20px 25px; 
+  color: #475569; line-height: 1.7; font-size: 1rem; 
+}
+
+.post-footer { 
+  padding: 15px 25px; 
+  border-top: 1px solid var(--border); 
+  display: flex; justify-content: space-between; align-items: center; 
+  background-color: #fff;
+}
+
+.post-tag { color: var(--primary); font-size: 0.85rem; font-weight: 600; margin-right: 10px; }
+.post-tag:before { content: '#'; opacity: 0.6; }
+
+.post-actions { display: flex; align-items: center; gap: 10px; }
+.read-more-btn { background: none; border: none; color: var(--primary); font-weight: 600; cursor: pointer; font-size: 0.9rem; padding: 0; }
+.read-more-btn:hover { text-decoration: underline; }
+
+.delete-btn { background: #fee2e2; color: #b91c1c; border: none; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 0.8rem; }
+.delete-btn:hover { background: #ef4444; color: white; }
+
+/* --- 6. BUTONLAR --- */
+.btn-primary { background: var(--primary); color: white !important; border: none; padding: 14px; width: 100%; border-radius: 8px; font-weight: 600; font-size: 1rem; cursor: pointer; transition: 0.2s; margin-top: 10px; }
+.btn-primary:hover { background: var(--primary-hover); }
+.btn-small { background: #10b981; color: white; border: none; padding: 8px 16px; border-radius: 6px; font-size: 0.85rem; cursor: pointer; font-weight: 600; }
+.logout-btn { background: white; border: 1px solid #cbd5e1; color: #475569; padding: 6px 14px; border-radius: 6px; cursor: pointer; font-size: 0.85rem; font-weight: 600; }
+.logout-btn:hover { background: #f1f5f9; color: #0f172a; }
+
+.tag-btn { background: #f1f5f9; border: 1px solid #e2e8f0; padding: 6px 12px; border-radius: 20px; font-size: 0.85rem; color: #64748b; cursor: pointer; transition: 0.2s; }
+.tag-btn:hover { border-color: var(--primary); color: var(--primary); }
+.tag-btn.selected { background: var(--primary); color: white; border-color: var(--primary); }
+
+/* --- 7. GİRİŞ EKRANI --- */
+.login-container { display: flex; justify-content: center; align-items: center; min-height: 100vh; background: #eef2f6; width: 100%; }
+.auth-box { width: 100%; max-width: 400px; padding: 40px; background: #fff; }
+.auth-title { text-align: center; margin-bottom: 30px; font-size: 1.8rem; color: #0f172a; font-weight: 800; }
+.auth-toggle { display: flex; justify-content: center; margin-bottom: 25px; border-bottom: 2px solid #f1f5f9; }
+.auth-toggle button { background: none; border: none; padding: 12px 24px; color: #94a3b8; font-weight: 600; font-size: 1rem; border-bottom: 2px solid transparent; cursor: pointer; margin-bottom: -2px; }
+.auth-toggle button.active { color: var(--primary); border-bottom-color: var(--primary); }
