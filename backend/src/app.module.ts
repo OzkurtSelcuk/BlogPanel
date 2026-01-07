@@ -15,12 +15,12 @@ import { Tag } from './tags/entities/tag.entity';
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      // İşte senin temizlenmiş, doğru linkin:
+     
       url: 'postgresql://neondb_owner:npg_4WgdDEF8fIHt@ep-young-leaf-agqc3455-pooler.c-2.eu-central-1.aws.neon.tech/neondb?sslmode=require',
       entities: [User, Post, Category, Tag],
       synchronize: true,
       ssl: {
-        rejectUnauthorized: false, // Bağlantı hatasını engelleyen ayar
+        rejectUnauthorized: false, 
       },
     }),
     UsersModule,

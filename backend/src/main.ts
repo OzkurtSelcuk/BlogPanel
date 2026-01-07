@@ -4,7 +4,6 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
-  // CORS AYARI
   app.enableCors({
     origin: true, 
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',

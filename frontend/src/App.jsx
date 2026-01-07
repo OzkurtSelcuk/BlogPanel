@@ -5,17 +5,17 @@ function App() {
   const [user, setUser] = useState(null);
   const [authMode, setAuthMode] = useState('login');
   
-  // Auth State
+
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [adminKey, setAdminKey] = useState('');
 
-  // Data State
+  
   const [posts, setPosts] = useState([]);
   const [categories, setCategories] = useState([]); 
   const [availableTags, setAvailableTags] = useState([]);
 
-  // Form State
+  
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [selectedCategoryId, setSelectedCategoryId] = useState('');
@@ -23,11 +23,11 @@ function App() {
   
   const [editingPostId, setEditingPostId] = useState(null);
   
-  // Kategori Ekleme State
+ 
   const [newCategoryName, setNewCategoryName] = useState('');
   const [showCategoryInput, setShowCategoryInput] = useState(false);
 
-  // YENİ: Etiket Ekleme State
+ 
   const [newTagName, setNewTagName] = useState('');
   const [showTagInput, setShowTagInput] = useState(false);
 
@@ -35,7 +35,6 @@ function App() {
     if (user) { fetchPosts(); fetchCategories(); fetchTags(); }
   }, [user]);
 
-  // --- GİRİŞ / KAYIT ---
   const handleAuth = async () => {
     if (!username || !password) { alert("Bilgileri giriniz!"); return; }
     const endpoint = authMode === 'login' ? 'login' : 'register';
@@ -56,7 +55,7 @@ function App() {
 
   const handleLogout = () => { setUser(null); setPosts([]); setEditingPostId(null); resetForm(); };
 
-  // --- VERİ ÇEKME ---
+ 
   const fetchPosts = async () => {
     try { const res = await fetch('http://localhost:3000/posts'); setPosts(await res.json()); } catch { setPosts([]); }
   };
@@ -72,7 +71,7 @@ function App() {
     setEditingPostId(null);
   };
 
-  // --- KAYDET / GÜNCELLE ---
+
   const handleSubmit = async () => {
     if (!title || !content || !selectedCategoryId) { alert("Başlık, içerik ve kategori zorunludur!"); return; }
 
@@ -119,7 +118,7 @@ function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // --- KATEGORİ EKLEME ---
+
   const handleCategoryEkle = async () => {
     try {
       await fetch('http://localhost:3000/categories', {
@@ -130,7 +129,7 @@ function App() {
     } catch { alert("Hata oluştu"); }
   };
 
-  // --- YENİ: ETİKET EKLEME ---
+ 
   const handleTagEkle = async () => {
     try {
       await fetch('http://localhost:3000/tags', {
@@ -157,7 +156,7 @@ function App() {
     else setSelectedTagIds([...selectedTagIds, id]);
   };
 
-  // --- LOGIN EKRANI ---
+  
   if (!user) {
     return (
       <div className="login-container">
@@ -194,14 +193,14 @@ function App() {
       </header>
 
       <div className="main-container">
-        {/* SOL PANEL - FORM */}
+       
         <div className="sidebar">
           <div className="card form-card">
             <h3>{editingPostId ? '✏️ Yazıyı Düzenle' : '✍️ Yeni Yazı Paylaş'}</h3>
             
             <div className="form-group"><label className="label-title">Başlık</label><input type="text" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Etkileyici bir başlık..." /></div>
             
-            {/* KATEGORİ ALANI */}
+            
             <div className="form-group">
               <div style={{display:'flex', justifyContent:'space-between', marginBottom:'5px'}}>
                 <label className="label-title">Kategori</label>
@@ -213,7 +212,7 @@ function App() {
 
             <div className="form-group"><label className="label-title">İçerik</label><textarea rows={8} value={content} onChange={(e) => setContent(e.target.value)} placeholder="Neler düşünüyorsun?"></textarea></div>
             
-            {/* ETİKET ALANI (YENİ EKLEME ÖZELLİKLİ) */}
+           
             <div className="form-group">
               <div style={{display:'flex', justifyContent:'space-between', marginBottom:'5px'}}>
                 <label className="label-title">Etiketler</label>
@@ -240,7 +239,7 @@ function App() {
           </div>
         </div>
 
-        {/* SAĞ PANEL - LİSTE */}
+       
         <div className="content-area">
           <div className="section-title">Son Paylaşımlar</div>
           {posts.map((post) => (

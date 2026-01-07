@@ -9,7 +9,7 @@ export class Tag {
   @Column()
   name: string;
 
-  // Etiketler ve Postlar arasında Çoka-Çok ilişki
+  
   @ManyToMany(() => Post, (post) => post.tags)
   posts: Post[];
 }

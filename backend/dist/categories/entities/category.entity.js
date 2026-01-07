@@ -33,4 +33,3 @@ __decorate([
 exports.Category = Category = __decorate([
     (0, typeorm_1.Entity)()
 ], Category);
-//# sourceMappingURL=category.entity.js.map

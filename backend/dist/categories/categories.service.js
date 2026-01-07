@@ -42,4 +42,3 @@ exports.CategoriesService = CategoriesService = __decorate([
     __param(0, (0, typeorm_1.InjectRepository)(category_entity_1.Category)),
     __metadata("design:paramtypes", [typeorm_2.Repository])
 ], CategoriesService);
-//# sourceMappingURL=categories.service.js.map

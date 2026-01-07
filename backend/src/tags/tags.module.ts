@@ -1,11 +1,11 @@
 import { Module } from '@nestjs/common';
-import { TypeOrmModule } from '@nestjs/typeorm'; // <-- EKLENDİ
+import { TypeOrmModule } from '@nestjs/typeorm';
 import { TagsService } from './tags.service';
 import { TagsController } from './tags.controller';
-import { Tag } from './entities/tag.entity'; // <-- EKLENDİ
+import { Tag } from './entities/tag.entity'; 
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Tag])], // <-- BU SATIR ÖNEMLİ
+  imports: [TypeOrmModule.forFeature([Tag])], 
   controllers: [TagsController],
   providers: [TagsService],
 })

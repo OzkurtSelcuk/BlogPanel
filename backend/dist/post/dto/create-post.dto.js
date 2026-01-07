@@ -9,4 +9,3 @@ class CreatePostDto {
     tagIds;
 }
 exports.CreatePostDto = CreatePostDto;
-//# sourceMappingURL=create-post.dto.js.map

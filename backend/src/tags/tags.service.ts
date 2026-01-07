@@ -20,9 +20,8 @@ export class TagsService {
     return this.tagRepository.find();
   }
   
-  // ID listesine göre etiketleri bulmak için (İleride lazım olacak)
   findByIds(ids: number[]) {
-      // TypeORM'un yeni sürümlerinde bu yöntem kullanılır
+      
       return this.tagRepository.findByIds(ids);
   }
 }
