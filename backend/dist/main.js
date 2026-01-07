@@ -13,4 +13,3 @@ async function bootstrap() {
     console.log('🚀 Backend Çalışıyor: http://localhost:3000/posts');
 }
 bootstrap();
-//# sourceMappingURL=main.js.map

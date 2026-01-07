@@ -9,7 +9,6 @@ export class Category {
   @Column()
   name: string;
 
-  // Bir kategoride çok yazı olabilir (Bire-Çok İlişki)
   @OneToMany(() => Post, (post) => post.category)
   posts: Post[];
 }

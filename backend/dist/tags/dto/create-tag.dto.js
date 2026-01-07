@@ -5,4 +5,3 @@ class CreateTagDto {
     name;
 }
 exports.CreateTagDto = CreateTagDto;
-//# sourceMappingURL=create-tag.dto.js.map

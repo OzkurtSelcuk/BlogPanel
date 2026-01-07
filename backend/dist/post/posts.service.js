@@ -94,4 +94,3 @@ exports.PostsService = PostsService = __decorate([
         typeorm_2.Repository,
         typeorm_2.Repository])
 ], PostsService);
-//# sourceMappingURL=posts.service.js.map

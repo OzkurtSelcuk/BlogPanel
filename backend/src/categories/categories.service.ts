@@ -11,7 +11,6 @@ export class CategoriesService {
   ) {}
 
   create(name: string) {
-    // Veritabanına gitmeden son bir kontrol
     if (!name) {
       throw new Error("Veritabanına boş isim kaydedilemez!");
     }
