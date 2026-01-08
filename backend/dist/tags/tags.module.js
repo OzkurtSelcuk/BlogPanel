@@ -22,3 +22,4 @@ exports.TagsModule = TagsModule = __decorate([
         providers: [tags_service_1.TagsService],
     })
 ], TagsModule);
+//# sourceMappingURL=tags.module.js.map

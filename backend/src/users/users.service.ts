@@ -1,4 +1,4 @@
-// src/users/users.service.ts
+
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
@@ -30,8 +30,7 @@ export class UsersService {
       throw new Error('Bu kullanıcı adı zaten alınmış!');
     }
 
-    // --- ADMİN OLMA MANTIĞI ---
-    // Eğer gelen veride 'adminKey' varsa ve şifre '12345' ise admin yap.
+    
     let role = 'user';
     if (createUserDto.adminKey === '12345') {
       role = 'admin';
@@ -40,7 +39,7 @@ export class UsersService {
     const newUser = this.usersRepository.create({
       username: createUserDto.username,
       password: createUserDto.password,
-      role: role // Belirlenen rolü ata
+      role: role 
     });
     
     return this.usersRepository.save(newUser);

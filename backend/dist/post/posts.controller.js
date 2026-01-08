@@ -80,3 +80,4 @@ exports.PostsController = PostsController = __decorate([
     (0, common_1.Controller)('posts'),
     __metadata("design:paramtypes", [posts_service_1.PostsService])
 ], PostsController);
+//# sourceMappingURL=posts.controller.js.map
